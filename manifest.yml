@@ -1,7 +1,7 @@
 applications:
-- disk_quota: 64M
+- disk_quota: 128M
   host: manifesto-caipira
   name: manifesto-caipira
   path: .
   instances: 1
-  memory: 32M
+  memory: 256M
