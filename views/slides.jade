@@ -1,0 +1,244 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Manifesto Caipira da Agilidade
+    meta(name='description', content='A framework for easily creating beautiful presentations using HTML')
+    meta(name='author', content='Hakim El Hattab')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui')
+    link(rel='stylesheet', href='css/reveal.css')
+    link#theme(rel='stylesheet', href='css/theme/black.css')
+    // Code syntax highlighting
+    link(rel='stylesheet', href='lib/css/zenburn.css')
+    // Printing and PDF exports
+    link(rel='stylesheet', href='fa/css/font-awesome.css')
+    //link(type="text/css", rel="stylesheet", href="css/styles.css")
+    
+    script.
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    //if lt IE 9
+    script(src='lib/js/html5shiv.js')
+
+  body
+
+    //
+      form.login
+        span What's your secret key?
+        input(type="password")
+        input(type="submit", value="go")
+
+    .reveal
+      // Any section element inside of this container is displayed as a slide
+      .slides
+        section
+          h1 Manifesto<br/>Caipira da<br/>Agilidade
+          p
+            a(href='http://twitter.com/alanbraz') 
+              i.fa.fa-twitter
+              | @alanbraz
+          p
+            a(href="http://caipiraagil.com", target="_blank") #caipiraagil
+          small 19 de Setembro de 2015
+            
+        //section(data-background="images/manifesto.png", style="padding: 20px;")
+        
+        section
+          a(href="http://manifestoagil.com.br/", target="_blank")
+            img(src="images/manifesto.png")
+        
+        section
+          h3 Começando apresentação ágil
+          ul
+            li.fragment Visão 
+              span.fragment.highlight-blue Montar nosso manifesto ágil através de exemplos
+            li.fragment Clientes e usuários 
+              span.fragment.highlight-blue parcipantes = vcs!
+            li.fragment Coach / facilitador 
+              span.fragment.highlight-blue eu?!
+            li.fragment Prazo fixo 
+              span.fragment.highlight-blue 30 minutos!
+            li.fragment Escopo  
+              span.fragment.highlight-blue aberto: práticas ágeis
+            li.fragment Equipe de desenvolvimento 
+              span.fragment.highlight-blue 3 pessoas diferentes
+            li.fragment Infraestrutura 
+              span.fragment.highlight-blue Slides com reveal-js em Jade
+            li.fragment Processo iterativo e incremental 
+              span.fragment.highlight-blue Scrum?!
+              
+        section
+          h3 Processo "Brazcrum"
+          p Uma rodada consiste em...
+          table
+            thead
+              tr
+                th Atividade
+                th Minutos
+            tbody
+              tr
+                td Definir tema
+                td 1
+              tr
+                td Desenvolver
+                td 5
+              tr
+                td Apresentar
+                td 1
+              tr
+                td Refletir
+                td 1
+          
+        section
+          section
+            h1 Exemplos
+          
+          section
+            p Tema: sistema puxado, sob-demanda
+            div(style="float: left; width: 45%")
+              img.photo-left(width='100%', height='100%', data-src='images/uber_taxi.jpg')
+            div(style="float: left; width: 10%")
+              p + ágil que
+            div(style="float: left; width: 45%")
+              img.photo-right(width='100%', height='100%', data-src='images/taxis.jpg')
+            div(style="clear: both;")
+              small Equipe: Alan, Gabriela
+                
+          section
+            p Tema: escopo fechado, tempo fixo
+            div(style="float: left; width: 45%")
+              img.photo-left(width='100%', height='100%', data-src='images/crossfit.jpg')
+            div(style="float: left; width: 10%")
+              p + ágil que
+            div(style="float: left; width: 45%")
+              img.photo-right(width='100%', height='100%', data-src='images/ficha.jpg')
+            div(style="clear: both;")
+              small Equipe: Alan, Gabriela
+            
+        section
+          h2 Backlog de possíveis temas
+          ul 
+            li Planejamento
+            li Estimativas
+            li Programação em par
+            li Reunião diária
+            li TDD
+            li Requisitos
+            li Product Backlog
+            li Gestão de projetos
+            li Contratos
+            li Integração Contínua
+            li ...
+              
+        // comece aqui
+              
+              
+              
+        section
+          h2 Práticas utilizadas?
+          p.fragment Esta apresentação foi realmente ágil?
+          
+          // qual formato é mais fácil?
+          // qual é mais efetivo? engajamento?
+          // intenso
+          
+          
+          
+    // não alterar à partir daqui
+    script(src='lib/js/head.min.js')
+    script(src='js/reveal.js')
+
+    script.
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+      //
+        // Connect to the socket
+        var socket = io();
+
+        // Variable initialization
+        var form = $('form.login'),	secretTextBox = form.find('input[type=text]');
+        var key = "", animationTimeout;
+        var presentation = $('.reveal');
+        presentation.addClass('blurred');
+
+        // When the page is loaded it asks you for a key and sends it to the server
+        form.submit(function(e){
+          e.preventDefault();
+          key = secretTextBox.val().trim();
+          // If there is a key, send it to the server-side
+          // through the socket.io channel with a 'load' event.
+          if(key.length) {
+            socket.emit('load', {
+              key: key
+            });
+          }
+        });
+
+        // The server will either grant or deny access, depending on the secret key
+        socket.on('access', function(data){
+          // Check if we have "granted" access.
+          // If we do, we can continue with the presentation.
+          if(data.access === "granted") {
+            // Unblur everything
+            presentation.removeClass('blurred');
+            form.hide();
+            var ignore = false;
+            $(window).on('hashchange', function(){
+              // Notify other clients that we have navigated to a new slide
+              // by sending the "slide-changed" message to socket.io
+              if(ignore){
+                // You will learn more about "ignore" in a bit
+                return;
+              }
+              var hash = window.location.hash;
+              socket.emit('slide-changed', {
+                hash: hash,
+                key: key
+              });
+            });
+
+            socket.on('navigate', function(data){
+              // Another device has changed its slide. Change it in this browser, too:
+              window.location.hash = data.hash;
+              // The "ignore" variable stops the hash change from
+              // triggering our hashchange handler above and sending
+              // us into a never-ending cycle.
+              ignore = true;
+              setInterval(function () {
+                ignore = false;
+              },100);
+            });
+          }	else {
+            // Wrong secret key
+            clearTimeout(animationTimeout);
+            // Addding the "animation" class triggers the CSS keyframe
+            // animation that shakes the text input.
+            secretTextBox.addClass('denied animation');
+            animationTimeout = setTimeout(function(){
+              secretTextBox.removeClass('animation');
+            }, 1000);
+            form.show();
+          }
+        });
