@@ -3,6 +3,5 @@ applications:
   host: manifesto-caipira
   name: manifesto-caipira
   path: .
-  domain: ng.mybluemix.net
   instances: 1
   memory: 32M

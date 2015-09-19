@@ -36,35 +36,5 @@ var host = (process.env.VCAP_APP_HOST || 'localhost');
 // The port on the DEA for communication with the application:
 var port = (process.env.VCAP_APP_PORT || 3000);
 // Start server
-//app.listen(port, host);
-//console.log('App started on port ' + port);
-
-var io = require('socket.io').listen(app.listen(port));
-
-// This is a secret key that prevents others from opening your presentation
-// and controlling it. Change it to something that only you know.
-var secret = 'caipirada';
-
-// Initialize a new socket.io application
-var presentation = io.on('connection', function (socket) {
-	// A new client has come online. Check the secret key and
-	// emit a "granted" or "denied" message.
-	socket.on('load', function(data){
-		socket.emit('access', {
-			access: (data.key === secret ? "granted" : "denied")
-		});
-	});
-
-	// Clients send the 'slide-changed' message whenever they navigate to a new slide.
-	socket.on('slide-changed', function(data){
-		// Check the secret key again
-		if(data.key === secret) {
-			// Tell all connected clients to navigate to the new slide
-			presentation.emit('navigate', {
-				hash: data.hash
-			});
-		}
-	});
-});
-
+app.listen(port, host);
 console.log('Your presentation is running on http://localhost:' + port);
